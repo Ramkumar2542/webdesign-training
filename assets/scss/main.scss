@@ -1,9 +1,16 @@
 // Base
 @import "./base/reset";
 @import "./base/global";
-// Utilities
-@import "./utilities/animation";
+
 // Components
 @import "./components/button";
+@import "./components/badges";
 // Layouts
 @import "./layouts/header";
+
+// Utilities
+@import "./utilities/animation";
+@import "./utilities/spacing";
+
+// Pages
+@import "./pages/home"

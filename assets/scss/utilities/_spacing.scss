@@ -1,0 +1,44 @@
+$spacing: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+$directions: top, bottom, right, left;
+
+@each $space in $spacing {
+
+    // Creating margin utilities
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+
+    // Creating padding utilities
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+
+    // Creating margin utilities for directions
+    @each $direction in $directions {
+        .m#{str-slice($direction,0,1)}-#{$space} {
+            margin-#{$direction}: #{$space}rem !important;
+        }
+    }
+
+     // Creating padding utilities for directions
+     @each $direction in $directions {
+        .p#{str-slice($direction,0,1)}-#{$space} {
+            padding-#{$direction}: #{$space}rem !important;
+        }
+    }
+
+}
+
+// Creating space-x and space-y values
+
+$space-axis-values:1,2,3,4,5,6;
+$space-axis-key:"x" "right", "y" "bottom";
+
+@each $space-axis in $space-axis-values {
+    @each $key, $value in $space-axis-key {
+        // space-x-1
+        .space-#{$key}-#{$space-axis} > *{
+            margin-#{value}:#{$space-axis}rem;
+        }
+    }
+}
